@@ -31,7 +31,7 @@ I am a Ph.D. student studying communications engineering under Professor Shih-Yu
 </div>
 
 </div>
-
+<!---
 ## Featured Projects
 
 <div class="featured-projects">
@@ -54,3 +54,4 @@ I am a Ph.D. student studying communications engineering under Professor Shih-Yu
     {% include awards.html award = award %} 
   </div>
 {% endfor %}
+-->
