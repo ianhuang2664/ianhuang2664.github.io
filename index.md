@@ -4,26 +4,24 @@ title: "Home"
 class: home
 ---
 
-# Hi, I'm Shih-Ming Huang
+# Hi, I'm Ian Huang
 
 <div class="columns" markdown="1">
 
 <div class="intro" markdown="1">
-I'm an M.S. student at [Advanced Antenna Laboratory](https://shihyuansite.wordpress.com/) at [National Taiwan University](https://www.ntu.edu.tw/english/) and a student research assistant at [Academia Sinica Institute of Astronomy and Astrophysics](https://www.asiaa.sinica.edu.tw/people/cv.php?i=smhuang). I am interested in developing novel applications of microwave engineering and specialized at system integration of microwave, baseband circuits, and embedded systems.
-
-My current research topic is <b>Spatially Reconfigurable Phased Arrays</b>. The project is sponsored by  [Ministry of Science and Technology](https://www.most.gov.tw/?l=en) (MOST) in Taiwan, and led by my advisor, Prof. [Shih-Yuan Chen](https://www.ee.ntu.edu.tw/profile1.php?teacher_id=942017). In this project, I am responsible for system integration and proposal drafting to MOST.
+I am a Ph.D. student studying communications engineering under Professor Shih-Yuan Chen at National Taiwan University as a part of the Advanced Antenna Lab. My research focuses on the integration and characterization of ESR control and readout circuitries for silicon spin-based qubits as well as the design of cryogenic circuits for quantum applications. I graduated from the University of Michigan with a bachelor’s degree in Mechanical Engineering in 2016.
 </div>
 
 <div class="me" markdown="1">
 <picture>
-  <a href="/mypage/images/ShihMing.jpg">
+  <a href="/images/ID_20210705.jpg">
     <img
-      src= '/mypage/images/ShihMing.jpg'
-      alt='Shih-Ming Huang'>
+      src= '/images/ID_20210705.jpg'
+      alt='Ian Huang'>
   </a>
 </picture>
   <br>
-  <a href="{{ "/CV_ShihMing.pdf" | relative_url }}" class="button">
+  <a href="{{ "/Ian Huang's Resume.pdf" | relative_url }}" class="button">
     <i class="fas fa-chevron-circle-right"></i>
     <b>Download CV</b>
   </a>
