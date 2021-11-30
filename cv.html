@@ -1,0 +1,249 @@
+---
+layout: cv
+permalink: /cv/
+title: CV
+---
+
+<section class="container">
+
+<h1>
+  Shih-Ming Huang     
+  <a href="{{ "/CV_ShihMing.pdf" | relative_url }}" class="button">
+    <i class="fas fa-chevron-circle-right"></i>
+    Download CV
+  </a>
+</h1>
+
+
+<small class="live-link">Last updated in <time datetime="{{ site.time }}">{{ site.time | date: '%B %Y'}}</time>. Get the latest version at <a href="{{ '/cv' | absolute_url }}">www.domoritz.de/cv</a>.</small>
+<div class="header-columns">
+  M.S. Student at<b>&nbsp<a href="https://www.ntu.edu.tw/english/">National Taiwan University</a>&nbsp</b>and Student Research Assistant at<b>&nbsp<a href="https://www.asiaa.sinica.edu.tw/">Academia Sinica</a></b>
+</div>
+
+<h2>Research Interests</h2>
+
+<p>
+&#x2022 RF-Circuits for Bioelectronics
+&#x2022 Phased Array
+&#x2022 Antenna
+&#x2022 Metamaterial <br>
+&#x2022 Monolithic Microwave Integrated Circuits (MMIC)
+</p>
+
+<h2>Education & Position</h2>
+<article>
+  <div class="date-container">
+    <span class="date"> 2016 - Now </span>
+    <h3>National Taiwan University</h3>
+  </div>
+  <p>
+    <span>B.S. in Electrical Engineering and M.S. in Communication Engineering</span>
+    <br>
+    <span> 
+      &#x2800 - Advisor: Dr. Shih-Yuan Chen <br>
+      &#x2800 -	 Research focus: spatially reconfigurable phased array <br>
+      &#x2800 -	 Cumulative GPA: 3.79/4.30 (B.S.); 4.30/4.30 (M.S.) <br>
+    </span>
+  </p>
+</article>
+<article>
+  <div class="date-container">
+    <span class="date"> 2020 - Now </span>
+    <h3>Institute of Astronomy and Astrophysics, Academia Sinica, Taiwan</h3>
+  </div>
+  <p>
+    <span>Student Research Assistant</span>
+    <br>
+    <span> 
+      &#x2800 - Advisor: Dr. Ming-Tang Chen and Mr. Ted Huang <br>
+      &#x2800 -	Research focus: 4-12.4 GHz cryogenic quadrature hybrid coupler<br>
+    </span>
+  </p>
+</article>
+
+<!-- {% for ed in site.data.education %}
+<article>
+  <div class="date-container">
+    <span class="date">{{ ed.years | replace: "-", "–" }}</span>
+    <strong class="fill">{{ ed.degree }}, {{ ed.university }}</strong>
+    <span class="right">{{ ed.location }}</span>
+  </div>
+  <p>
+    {% for des in ed.description %}
+      <span>{{ des | markdownify | remove: '<p>' | remove: '</p>' }}</span>{% unless forloop.last %}<br/>{% endunless %}
+    {% endfor %}
+  </p>
+</article>
+{% endfor %} -->
+
+<h2>Research Experience</h2>
+
+<p>
+<h3>&#x2022 Spatially Reconfigurable Phased Arrays - <i>Project Leader</i></h3>
+<div>&#x2800 A phased array whose antenna elements are separately carried by multiple UAVs</div>
+<div>&#x2800 Drafted proposals to and won sponsorship from Ministry of Science and Technology, Taiwan</div>
+<h3>&#x2022 4-12.4 GHz Quadrature Hybrid Coupler for ALMA Observatory - <i>Designer</i></h3>
+<div>&#x2800 A broad-side coupled quadrature hybrid with &#xB1 0.4 dB amplitude and &#xB1 4&#x00B0 phase imbalance </div>
+<h3>&#x2022 Beam Visualization System for Phased Array Education - <i>System Designer</i></h3>
+<div>&#x2800 An educational platform for students to implement and observe their phased arrays</div>
+<h3>&#x2022 A Dual-Band Wearable Open-Sourced Radar System - <i>System Designer</i></h3>
+<div>&#x2800 An FMCW radar using 5.8-GHz and 915-MHz ISM band controlled by Raspberry Pi</div> 
+</p>
+
+<h2>Publications</h2>
+
+{% assign sorted_pubs = site.publications | reverse %}
+
+<!-- {% assign types = "Conference|Journal" | split: "|" %} -->
+{% assign types = "Conference|Magazine" | split: "|" %}
+{% for type in types %}
+  {% assign counter = 1 %}
+  {% for pub in sorted_pubs %}
+    {% if pub.type[0] == type %}
+      {% assign counter = counter | plus: 1 %}
+    {% endif %}
+  {% endfor %}
+
+  <!-- <h3 class="pub-type">
+    {{ type }}
+  </h3> -->
+
+  {% for pub in sorted_pubs %}
+    {% if pub.type[0] == type %}
+      {% assign counter = counter | minus: 1 %}
+      <article class="pub">
+        <!-- <div class="ref-container">{{ type | slice: 0 }}{{ counter }}</div> -->
+        <strong class="fill">{% if pub.pdf %}<a href="{{ pub.pdf }}">{{ pub.title }}</a>{% else %}{{ pub.title }}{%endif%}</strong>
+        <div>
+          {% for author in pub.authors %}{% include person person=author %}{% unless forloop.last %}, {% endunless %}{% endfor %}.
+          {% if pub.venue or pub.description %}<i>{% if pub.description %}{{ pub.description | markdownify | remove: '<p>' | remove: '</p>' }}{% endif %}{{ pub.venue }}</i>{% if pub.venue %},{% endif %} {% endif %}{{ pub.year }}({{ pub.status }}).
+
+          {% if pub.link or pub.pdf or pub.video or pub.blog or pub.slides or pub.doi %}
+            <div class="extra-links">
+            {% if pub.pdf %}
+              <a href="{{ pub.pdf }}">
+                <i class="far fa-file-pdf" aria-hidden="true"></i> PDF
+              </a>
+            {% endif %}
+            {% if pub.link %}
+              <a href="{{ pub.link }}">
+                <i class="fas fa-link" aria-hidden="true"></i> Project
+              </a>
+            {% endif %}
+            {% if pub.blog %}
+              <a href="{{ pub.blog }}">
+                <i class="fas fa-newspaper" aria-hidden="true"></i> Article
+              </a>
+            {% endif %}
+            {% if pub.video %}
+              <a href="{{ pub.video }}">
+                <i class="fas fa-film" aria-hidden="true"></i> Video
+              </a>
+            {% endif %}
+            {% if pub.doi %}
+              <a href="https://www.doi2bib.org/bib/{{ pub.doi }}">
+                <i class="fas fa-book" aria-hidden="true"></i> Bibtex
+              </a>
+            {% elsif pub.arxiv %}
+              <a href="https://arxiv2bibtex.org/?q={{ pub.arxiv | cgi_escape }}">
+                <i class="fas fa-book" aria-hidden="true"></i> Bibtex
+              </a>
+            {% endif %}
+            </div>
+          {% endif %}
+
+          {% for award in pub.awards %}<strong class="award"><i class="fas fa-{% if award == "Best Paper Award" %}trophy{% else %}award{% endif %}" aria-hidden="true"></i> {{ award }}</strong>{% endfor %}
+        </div>
+      </article>
+    {% endif %}
+  {% endfor %}
+{% endfor %}
+
+<h2>Awards</h2>
+
+{% for award in site.data.awards %}
+<article>
+  <div class="date-container">
+    <span class="date">{{ award.year | replace: "-", "–" }}</span>
+    <strong class="fill">{{ award.title }}</strong>
+    <!-- <span class="right">{{ award.sponsor }}</span> -->
+  </div>
+  <div>
+    {{ award.brief }}
+  </div>
+</article>
+{% endfor %}
+
+<h2>Skills</h2>
+<h3>&#x2022 Electromagnetic Software</h3>
+<div>&#x2800 Ansys HFSS, Keysight ADS, Sonnet, Altair Feko, and CST Studio</div>
+<h3>&#x2022 Microwave Device Measurement</h3>
+<div>&#x2800 NSI2000 Antenna Measurement System, Vector Network Analyzer, and Spectrum Analyzer</div>
+<h3>&#x2022 Embedded Systems</h3>
+<div>&#x2800 Arduino, Raspberry Pi, and Arm Cortex-M processers (STM32 and Microchip)</div>
+<h3>&#x2022 PCB Layout and Fabrication</h3>
+<h3>&#x2022 General Purpose Software</h3>
+<div>&#x2800 C++, Python, Matlab, HTML, and CSS</div>
+<h3>&#x2022 3D Modeler</h3>
+<div>&#x2800 Solidworks and Fusion 360</div>
+
+<h2>Leadership</h2>
+{% for act in site.data.activities %}
+<article>
+  <div class="date-container">
+    <span class="date">{{ act.year }}</span>
+    <strong class="fill"><a href="{{ act.website }}">{{ act.title }}</a></strong>
+    <I>{{ act.position }}</I>
+  </div>
+</article>
+{% endfor %}
+
+<h2>Relevant Courses</h2>
+  <h3>Electromagnetics</h3>
+    <div>
+      &#x2022 Electromagnetic Compatibility (A+)
+      &#x2022 Antenna (A+)
+      &#x2022 Numerical Method (A+) <br>
+      &#x2022 Theory of Microwave Circuits and Devices (A+)
+      &#x2022 Electromagnetics Theories (A+) <br>
+      &#x2022 Lab on Electromagnetic Waves (A+)
+    </div>
+  <h3>Integrated Circuits</h3>
+    <div>
+      &#x2022 Monolithic Microwave Integrated Circuits (MMIC) Engineering (A+) <br>
+      &#x2022 Power Amplifier Design for Wireless Communications (Studying)
+    </div>
+  <h3>Signal Processing</h3>
+    <div>
+      &#x2022 Advanced Digital Signal Processing (A+)
+    </div>
+  <h3>Others</h3>
+    <div>
+      &#x2022 Logic Your Way into Writing (A+)
+      &#x2022 Patent Opposition and Infringement (A+)
+    </div>
+
+
+<h2>Teaching Assistant</h2>
+
+{% for teach in site.data.teaching %}
+<article>
+  <div class="date-container">
+    <span class="date">{{ teach.year }}</span>
+    <strong class="fill"><a href="{{ teach.url }}">{{ teach.title }}</a></strong>
+    <span class="right">{{ teach.location }}</span>
+  </div>
+  <p>
+    {% if teach.students %}
+      <!-- {% if teach.role %}{{ teach.role }}{% endif %}{% if teach.professor %} for {% include person person=teach.professor %}{% endif %}, -->
+      {{ teach.students }}
+      <br/>
+    {% endif %}
+    <span class="muted">
+      {{ teach.description | markdownify | remove: '<p>' | remove: '</p>' }}
+    </span>
+  </p>
+</article>
+{% endfor %}
+
+</section>
