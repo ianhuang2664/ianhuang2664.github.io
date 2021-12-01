@@ -1,5 +1,5 @@
 #RFICs 
-- title: 28-bit Serial-Peripheral Interface IC for bias voltage control using 0.18um CMOS Technology
+  - title: 28-bit Serial-Peripheral Interface IC for bias voltage control using 0.18um CMOS Technology
   imgLink: https://shih-ming.github.io/mypage/images/projects/DroneArray.JPG
   image: DroneArray.JPG
   description: "Taped out a 28-bit Serial-Peripheral Interface IC for bias voltage control using 0.18um CMOS Technology. "
