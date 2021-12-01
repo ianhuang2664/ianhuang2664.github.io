@@ -9,7 +9,11 @@ class: home
 <div class="columns" markdown="1">
 
 <div class="intro" markdown="1">
-I am a Ph.D. student studying communications engineering under Professor Shih-Yuan Chen at National Taiwan University as a part of the Advanced Antenna Lab. My research focuses on the integration and characterization of ESR control and readout circuitries for silicon spin-based qubits as well as the design of cryogenic circuits for quantum applications. I graduated from the University of Michigan with a bachelor’s degree in Mechanical Engineering in 2016.
+I am currently pursuing a Ph.D. degree in communications engineering at National Taiwan University. My research focus is on the integration and characterization of ESR control and readout circuitries for silicon spin-based qubits as well as the design of cryogenic circuits for quantum applications. 
+
+Other projects that I have been a part of at NTU were to design and fabricate a SATCOM TRx base station and a long-distance low-powered tracker. 
+
+Previously, I received a Bachelors in Mechanical Engineering from University of Michigan, and used the skills to work at Extol designing machine components using Solidworks.
 </div>
 
 <div class="me" markdown="1">
