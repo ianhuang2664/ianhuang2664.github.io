@@ -25,7 +25,7 @@ Previously, I received a Bachelors in Mechanical Engineering from University of 
   </a>
 </picture>
   <br>
-  <a href="{{ "/Ian Huang's Resume.pdf" | relative_url }}" class="button">
+  <a href="{{ "/report/Ian Huang's Resume.pdf" | relative_url }}" class="button">
     <i class="fas fa-chevron-circle-right"></i>
     <b>Download CV</b>
   </a>

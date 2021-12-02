@@ -1,50 +1,45 @@
 #RFICs 
 - title: 28-bit Serial-Peripheral Interface IC for bias voltage control using 0.18um CMOS Technology
-  imgLink: https://shih-ming.github.io/mypage/images/projects/DroneArray.JPG
-  image: DroneArray.JPG
+  imgLink: https://ianhuang2664.github.io/images/SPI.JPG
+  image: SPI.JPG
   description: "Taped out a 28-bit Serial-Peripheral Interface IC for bias voltage control using 0.18um CMOS Technology. "
   highlight: 1
   
 - title: 29GHz 1Watt GaAs Power Amplifier using P15 D-Mode pHEMT Technology
-  imgLink: https://shih-ming.github.io/mypage/images/projects/DroneArray.JPG
-  image: DroneArray.JPG
+  imgLink: https://ianhuang2664.github.io/images/PA.JPG
+  image: PA.JPG
   description: "Taped out 29GHz 1Watt GaAs Power Amplifier using P15 D-Mode pHEMT Technology. "
   highlight: 2
     
 - title: 29GHz IQ Up-Converter using 0.18um CMOS Technology
-  imgLink: https://shih-ming.github.io/mypage/images/projects/DroneArray.JPG
-  image: DroneArray.JPG
+  imgLink: https://ianhuang2664.github.io/images/Mixer.JPG
+  image: Mixer.JPG
   description: "Taped out 29GHz IQ Up-Converter using 0.18um CMOS Technology. "
   highlight: 3
   
 - title: Researched using Neural Networks to control bias voltages for mixers to obtain better performance across a wider bandwidth
-  imgLink: https://shih-ming.github.io/mypage/images/projects/DroneArray.JPG
-  image: DroneArray.JPG
+  imgLink: https://ianhuang2664.github.io/images/NN.JPG
+  image: NN.JPG
   description: "Researched using Neural Networks to control bias voltages for mixers to obtain better performance across a wider bandwidth. "
   highlight: 4
-    
-- title: Researched using Glass Interposers for 2.5D IC Packaging
-  imgLink: https://shih-ming.github.io/mypage/images/projects/DroneArray.JPG
-  image: DroneArray.JPG
-  description: "Researched using Glass Interposers for 2.5D IC Packaging. "
 
 # Long range transceiver design and fabrication
 - title: Created an Android app written in React Native to display GPS data stream and compass direction
-  imgLink: https://shih-ming.github.io/mypage/images/projects/DroneArray.JPG
-  image: DroneArray.JPG
+  imgLink: https://ianhuang2664.github.io/images/ReactNativeApp.JPG
+  image: ReactNativeApp.JPG
   description: "Created an Android app written in React Native to display GPS data stream and compass direction. "
 
 - title: Managed and designed the transmitter and receiver systems for long-range GPS wireless transmission
-  imgLink: https://shih-ming.github.io/mypage/images/projects/DroneArray.JPG
-  image: DroneArray.JPG
+  imgLink: https://ianhuang2664.github.io/images/falconry.JPG
+  image: falconry.JPG
   description: "Managed and designed the transmitter and receiver systems for long-range GPS wireless transmission. "
 
 - title: Designed and created prototype cases for modules used for GPS tracking using Solidworks
-  imgLink: https://shih-ming.github.io/mypage/images/projects/DroneArray.JPG
-  image: DroneArray.JPG
+  imgLink: https://ianhuang2664.github.io/images/Case.JPG
+  image: Case.JPG
   description: "Designed and created prototype cases for modules used for GPS tracking using Solidworks. "
 
 - title: Designed and fabricated cases for transceiver and receiver modules using Autodesk Inventor
-  imgLink: https://shih-ming.github.io/mypage/images/projects/DroneArray.JPG
-  image: DroneArray.JPG
+  imgLink: https://ianhuang2664.github.io/images/Case.JPG
+  image: Case.JPG
   description: "Designed and fabricated cases for transceiver and receiver modules using Autodesk Inventor. "
