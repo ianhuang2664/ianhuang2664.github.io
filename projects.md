@@ -7,7 +7,7 @@ class: projects
 
 {:.hidden}
 # Projects
-<!---
+
 {:.lead}
 Here are some projects I did for research, term projects, or just for fun. Click the pictures to see the enlarged picture.
 <div class="grid">
@@ -15,4 +15,3 @@ Here are some projects I did for research, term projects, or just for fun. Click
     {% include project.html project=project %}
   {% endfor %}
 </div>
--->
