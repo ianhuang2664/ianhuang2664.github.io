@@ -35,9 +35,7 @@ Previously, I received a Bachelors in Mechanical Engineering from University of 
 </div>
 
 </div>
-<!---
 ## Featured Projects
-
 <div class="featured-projects">
   {% assign sorted_projects = site.data.projects | sort: 'highlight' %}
   {% for project in sorted_projects %}
@@ -58,4 +56,3 @@ Previously, I received a Bachelors in Mechanical Engineering from University of 
     {% include awards.html award = award %} 
   </div>
 {% endfor %}
--->

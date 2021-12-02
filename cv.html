@@ -17,46 +17,43 @@ title: CV
 
 <small class="live-link">Last updated in <time datetime="{{ site.time }}">{{ site.time | date: '%B %Y'}}</time>. Get the latest version at <a href="{{ '/cv' | absolute_url }}">www.domoritz.de/cv</a>.</small>
 <div class="header-columns">
-  Ph.D. Student at<b>&nbsp<a href="https://www.ntu.edu.tw/english/">National Taiwan University</a>&nbsp</b>and Student Research Assistant at<b>&nbsp<a href="https://www.asiaa.sinica.edu.tw/">Academia Sinica</a></b>
+  Ph.D. Student at<b>&nbsp<a href="https://www.ntu.edu.tw/english/">National Taiwan University</a>&nbsp</b>
 </div>
 
 <h2>Research Interests</h2>
 
 <p>
-&#x2022 RF-Circuits for Bioelectronics
-&#x2022 Phased Array
 &#x2022 Antenna
-&#x2022 Metamaterial <br>
+&#x2022 Qubit Control and Readout
 &#x2022 Monolithic Microwave Integrated Circuits (MMIC)
+&#x2022 Cryogenic ICs
 </p>
 
 <h2>Education & Position</h2>
 <article>
   <div class="date-container">
-    <span class="date"> 2016 - Now </span>
+    <span class="date"> 2017 - Now </span>
     <h3>National Taiwan University</h3>
   </div>
   <p>
-    <span>B.S. in Electrical Engineering and M.S. in Communication Engineering</span>
+    <span>Ph.D. in Communication Engineering (ongoing)</span>
     <br>
     <span> 
       &#x2800 - Advisor: Dr. Shih-Yuan Chen <br>
-      &#x2800 -	 Research focus: spatially reconfigurable phased array <br>
-      &#x2800 -	 Cumulative GPA: 3.79/4.30 (B.S.); 4.30/4.30 (M.S.) <br>
+      &#x2800 -	 Research focus: Integration with spin qubit <br>
     </span>
   </p>
 </article>
 <article>
   <div class="date-container">
-    <span class="date"> 2020 - Now </span>
-    <h3>Institute of Astronomy and Astrophysics, Academia Sinica, Taiwan</h3>
+    <span class="date"> 2012-2016 </span>
+    <h3>University of Michigan, Ann Arbor, USA</h3>
   </div>
   <p>
-    <span>Student Research Assistant</span>
+    <span>B.S. in Mechanical Engineering</span>
     <br>
     <span> 
-      &#x2800 - Advisor: Dr. Ming-Tang Chen and Mr. Ted Huang <br>
-      &#x2800 -	Research focus: 4-12.4 GHz cryogenic quadrature hybrid coupler<br>
+      &#x2800 -	Research focus: linkages and wheelchairs<br>
     </span>
   </p>
 </article>
@@ -82,15 +79,17 @@ title: CV
 <h2>Research Experience</h2>
 
 <p>
-<h3>&#x2022 Spatially Reconfigurable Phased Arrays - <i>Project Leader</i></h3>
-<div>&#x2800 A phased array whose antenna elements are separately carried by multiple UAVs</div>
-<div>&#x2800 Drafted proposals to and won sponsorship from Ministry of Science and Technology, Taiwan</div>
-<h3>&#x2022 4-12.4 GHz Quadrature Hybrid Coupler for ALMA Observatory - <i>Designer</i></h3>
-<div>&#x2800 A broad-side coupled quadrature hybrid with &#xB1 0.4 dB amplitude and &#xB1 4&#x00B0 phase imbalance </div>
-<h3>&#x2022 Beam Visualization System for Phased Array Education - <i>System Designer</i></h3>
-<div>&#x2800 An educational platform for students to implement and observe their phased arrays</div>
-<h3>&#x2022 A Dual-Band Wearable Open-Sourced Radar System - <i>System Designer</i></h3>
-<div>&#x2800 An FMCW radar using 5.8-GHz and 915-MHz ISM band controlled by Raspberry Pi</div> 
+<h3>&#x2022 RFICs</h3>
+<div>&#x2800 Taped out a 28-bit Serial-Peripheral Interface IC for bias voltage control using 0.18um CMOS Technology</div>
+<div>&#x2800 Taped out a 29GHz 1Watt GaAs Power Amplifier using P15 D-Mode pHEMT Technology</div>
+<div>&#x2800 Taped out a 29GHz IQ Up-Converter using 0.18um CMOS Technology</div>
+<div>&#x2800 Researched using Neural Networks to control bias voltages for mixers to obtain better performance across a wider bandwidth</div>
+<div>&#x2800 Researched using Glass Interposers for 2.5D IC Packaging</div>
+<h3>&#x2022 Long range transceiver design and fabrication</h3>
+<div>&#x2800 Managed and designed the transmitter and receiver systems for long-range GPS wireless transmission</div>
+<div>&#x2800 Created an Android app written in React Native to display GPS data stream and compass direction</div>
+<div>&#x2800 Designed and created prototype cases for modules used for GPS tracking using Solidworks</div>
+<div>&#x2800 Designed and fabricated cases for transceiver and receiver modules using Autodesk Inventor</div>
 </p>
 
 <h2>Publications</h2>
@@ -180,74 +179,18 @@ title: CV
 
 <h2>Skills</h2>
 <h3>&#x2022 Electromagnetic Software</h3>
-<div>&#x2800 Ansys HFSS, Keysight ADS, Sonnet, Altair Feko, and CST Studio</div>
+<div>&#x2800 Ansys HFSS, Keysight ADS, Sonnet, Cadence</div>
 <h3>&#x2022 Microwave Device Measurement</h3>
 <div>&#x2800 NSI2000 Antenna Measurement System, Vector Network Analyzer, and Spectrum Analyzer</div>
 <h3>&#x2022 Embedded Systems</h3>
-<div>&#x2800 Arduino, Raspberry Pi, and Arm Cortex-M processers (STM32 and Microchip)</div>
+<div>&#x2800 Arduino, Raspberry Pi, and Arm Cortex-M processers (STM32)</div>
 <h3>&#x2022 PCB Layout and Fabrication</h3>
 <h3>&#x2022 General Purpose Software</h3>
 <div>&#x2800 C++, Python, Matlab, HTML, and CSS</div>
 <h3>&#x2022 3D Modeler</h3>
-<div>&#x2800 Solidworks and Fusion 360</div>
-
-<h2>Leadership</h2>
-{% for act in site.data.activities %}
-<article>
-  <div class="date-container">
-    <span class="date">{{ act.year }}</span>
-    <strong class="fill"><a href="{{ act.website }}">{{ act.title }}</a></strong>
-    <I>{{ act.position }}</I>
-  </div>
-</article>
-{% endfor %}
-
-<h2>Relevant Courses</h2>
-  <h3>Electromagnetics</h3>
-    <div>
-      &#x2022 Electromagnetic Compatibility (A+)
-      &#x2022 Antenna (A+)
-      &#x2022 Numerical Method (A+) <br>
-      &#x2022 Theory of Microwave Circuits and Devices (A+)
-      &#x2022 Electromagnetics Theories (A+) <br>
-      &#x2022 Lab on Electromagnetic Waves (A+)
-    </div>
-  <h3>Integrated Circuits</h3>
-    <div>
-      &#x2022 Monolithic Microwave Integrated Circuits (MMIC) Engineering (A+) <br>
-      &#x2022 Power Amplifier Design for Wireless Communications (Studying)
-    </div>
-  <h3>Signal Processing</h3>
-    <div>
-      &#x2022 Advanced Digital Signal Processing (A+)
-    </div>
-  <h3>Others</h3>
-    <div>
-      &#x2022 Logic Your Way into Writing (A+)
-      &#x2022 Patent Opposition and Infringement (A+)
-    </div>
+<div>&#x2800 Solidworks, Autodesk Inventor, and AutoCAD</div>
 
 
-<h2>Teaching Assistant</h2>
 
-{% for teach in site.data.teaching %}
-<article>
-  <div class="date-container">
-    <span class="date">{{ teach.year }}</span>
-    <strong class="fill"><a href="{{ teach.url }}">{{ teach.title }}</a></strong>
-    <span class="right">{{ teach.location }}</span>
-  </div>
-  <p>
-    {% if teach.students %}
-      <!-- {% if teach.role %}{{ teach.role }}{% endif %}{% if teach.professor %} for {% include person person=teach.professor %}{% endif %}, -->
-      {{ teach.students }}
-      <br/>
-    {% endif %}
-    <span class="muted">
-      {{ teach.description | markdownify | remove: '<p>' | remove: '</p>' }}
-    </span>
-  </p>
-</article>
-{% endfor %}
 
 </section>
