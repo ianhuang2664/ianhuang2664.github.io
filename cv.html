@@ -7,190 +7,184 @@ title: CV
 <section class="container">
 
 <h1>
-  Ian Huang     
-  <a href="{{ "/report/Ian Huang's Resume.pdf" | relative_url }}" class="button">
+  Ian Huang
+  <a href="{{ '/report/20260426%20CV_MTK_SA_v1.pdf' | relative_url }}" class="button">
     <i class="fas fa-chevron-circle-right"></i>
     Download CV
   </a>
 </h1>
 
+<small class="live-link">
+  Last updated in <time datetime="{{ site.time }}">{{ site.time | date: '%B %Y' }}</time>.
+  Get the latest version at <a href="{{ '/cv' | absolute_url }}">ianhuang2664.github.io/cv</a>.
+</small>
 
-<small class="live-link">Last updated in <time datetime="{{ site.time }}">{{ site.time | date: '%B %Y'}}</time>. Get the latest version at <a href="{{ '/cv' | absolute_url }}">www.domoritz.de/cv</a>.</small>
 <div class="header-columns">
-  Ph.D. Student at<b>&nbsp<a href="https://www.ntu.edu.tw/english/">National Taiwan University</a>&nbsp</b>
+  Ph.D. Candidate in Communication Engineering at
+  <b><a href="https://www.ntu.edu.tw/english/">National Taiwan University</a></b><br>
+  <a href="mailto:ianhuang2664@gmail.com">ianhuang2664@gmail.com</a> |
+  <a href="https://ianhuang2664.github.io/">ianhuang2664.github.io</a> |
+  (+886) 905-772-705
 </div>
 
-<h2>Research Interests</h2>
-
+<h2>Professional Summary</h2>
 <p>
-&#x2022 Antenna
-&#x2022 Qubit Control and Readout
-&#x2022 Monolithic Microwave Integrated Circuits (MMIC)
-&#x2022 Cryogenic ICs
+  Ph.D. candidate in Communication Engineering with hands-on experience in cryogenic RF measurement systems,
+  sub-THz characterization, antenna and RF front-end development, and CMOS/GaAs IC tapeout. Built RF test setups,
+  developed cryogenic calibration methods, and supported hardware integration for RF and quantum-related applications.
 </p>
 
-<h2>Education & Position</h2>
+<h2>Education</h2>
+
 <article>
   <div class="date-container">
-    <span class="date"> 2017 - Now </span>
+    <span class="date">Sep 2019 - Present</span>
     <h3>National Taiwan University</h3>
   </div>
   <p>
-    <span>Ph.D. in Communication Engineering (ongoing)</span>
-    <br>
-    <span> 
-      &#x2800 - Advisor: Dr. Shih-Yuan Chen <br>
-      &#x2800 -	 Research focus: Integration with spin qubit <br>
-    </span>
+    <strong>Ph.D. Candidate, Communication Engineering</strong><br>
+    Taipei, Taiwan<br>
+    Direct transition from M.S. program; entered Feb 2018. M.S. degree not separately conferred.
   </p>
+  <ul>
+    <li>Advisor: Dr. Shih-Yuan Chen</li>
+    <li>Research Topic: Integration and Characterization of ESR control and the Control and Readout RF Circuitries for Quantum and Cryogenic Applications</li>
+    <li>Award: 2020 IWEM Conference Best Paper Award</li>
+    <li>Teaching Assistant: Antenna Course, Fall 2025</li>
+  </ul>
 </article>
+
 <article>
   <div class="date-container">
-    <span class="date"> 2012-2016 </span>
-    <h3>University of Michigan, Ann Arbor, USA</h3>
+    <span class="date">2012 - 2016</span>
+    <h3>University of Michigan - Ann Arbor</h3>
   </div>
   <p>
-    <span>B.S. in Mechanical Engineering</span>
-    <br>
-    <span> 
-      &#x2800 -	Research focus: linkages and wheelchairs<br>
-    </span>
+    <strong>Bachelor of Science in Mechanical Engineering</strong>
   </p>
+  <ul>
+    <li>University of Michigan Dean's List</li>
+    <li>University of Michigan Honors, Winter 2015</li>
+  </ul>
 </article>
 
+<h2>Select RF / System Projects</h2>
 
-
-<!-- {% for ed in site.data.education %}
 <article>
   <div class="date-container">
-    <span class="date">{{ ed.years | replace: "-", "–" }}</span>
-    <strong class="fill">{{ ed.degree }}, {{ ed.university }}</strong>
-    <span class="right">{{ ed.location }}</span>
+    <span class="date">2022 - 2026</span>
+    <h3>Cryogenic Measurements</h3>
   </div>
-  <p>
-    {% for des in ed.description %}
-      <span>{{ des | markdownify | remove: '<p>' | remove: '</p>' }}</span>{% unless forloop.last %}<br/>{% endunless %}
-    {% endfor %}
-  </p>
+  <p><strong>System Setup</strong> | NTU GICE</p>
+  <ul>
+    <li>Built and integrated the RF signal chain for a dilution refrigerator measurement setup, choosing the attenuation and gain stages to meet thermal and measurement requirements.</li>
+    <li>Designed and fabricated cryogenic PCBs using Rogers RO3003 as a sample holder for high-frequency signals and for stable Dk.</li>
+    <li>Developed milli-Kelvin cryogenic calibration procedures for RF measurements in a dilution refrigerator, including the effects of cable loss, temperature dependence, and limited in-situ standards.</li>
+    <li>Established a 4-K probe-station measurement capability for low-temperature IC/device characterization.</li>
+    <li>Selected instrumentation and components for 4-K IC characterization based on the measurement needs of low-temperature device testing.</li>
+  </ul>
 </article>
-{% endfor %} -->
 
-
-<h2>Research Experience</h2>
-
-<p>
-<h3>&#x2022 RFICs</h3>
-<div>&#x2800 Taped out a 28-bit Serial-Peripheral Interface IC for bias voltage control using 0.18um CMOS Technology</div>
-<div>&#x2800 Taped out a 29GHz 1Watt GaAs Power Amplifier using P15 D-Mode pHEMT Technology</div>
-<div>&#x2800 Taped out a 29GHz IQ Up-Converter using 0.18um CMOS Technology</div>
-<div>&#x2800 Researched using Neural Networks to control bias voltages for mixers to obtain better performance across a wider bandwidth</div>
-<div>&#x2800 Researched using Glass Interposers for 2.5D IC Packaging</div>
-<h3>&#x2022 Long range transceiver design and fabrication</h3>
-<div>&#x2800 Managed and designed the transmitter and receiver systems for long-range GPS wireless transmission</div>
-<div>&#x2800 Created an Android app written in React Native to display GPS data stream and compass direction</div>
-<div>&#x2800 Designed and created prototype cases for modules used for GPS tracking using Solidworks</div>
-<div>&#x2800 Designed and fabricated cases for transceiver and receiver modules using Autodesk Inventor</div>
-</p>
-
-<h2>Publications</h2>
-
-{% assign sorted_pubs = site.publications | reverse %}
-
-
-<!-- {% assign types = "Conference|Journal" | split: "|" %} -->
-{% assign types = "Conference|Magazine" | split: "|" %}
-{% for type in types %}
-  {% assign counter = 1 %}
-  {% for pub in sorted_pubs %}
-    {% if pub.type[0] == type %}
-      {% assign counter = counter | plus: 1 %}
-    {% endif %}
-  {% endfor %}
-
-  <!-- <h3 class="pub-type">
-    {{ type }}
-  </h3> -->
-
-  {% for pub in sorted_pubs %}
-    {% if pub.type[0] == type %}
-      {% assign counter = counter | minus: 1 %}
-      <article class="pub">
-        <!-- <div class="ref-container">{{ type | slice: 0 }}{{ counter }}</div> -->
-        <strong class="fill">{% if pub.pdf %}<a href="{{ pub.pdf }}">{{ pub.title }}</a>{% else %}{{ pub.title }}{%endif%}</strong>
-        <div>
-          {% for author in pub.authors %}{% include person person=author %}{% unless forloop.last %}, {% endunless %}{% endfor %}.
-          {% if pub.venue or pub.description %}<i>{% if pub.description %}{{ pub.description | markdownify | remove: '<p>' | remove: '</p>' }}{% endif %}{{ pub.venue }}</i>{% if pub.venue %},{% endif %} {% endif %}{{ pub.year }}({{ pub.status }}).
-
-          {% if pub.link or pub.pdf or pub.video or pub.blog or pub.slides or pub.doi %}
-            <div class="extra-links">
-            {% if pub.pdf %}
-              <a href="{{ pub.pdf }}">
-                <i class="far fa-file-pdf" aria-hidden="true"></i> PDF
-              </a>
-            {% endif %}
-            {% if pub.link %}
-              <a href="{{ pub.link }}">
-                <i class="fas fa-link" aria-hidden="true"></i> Project
-              </a>
-            {% endif %}
-            {% if pub.blog %}
-              <a href="{{ pub.blog }}">
-                <i class="fas fa-newspaper" aria-hidden="true"></i> Article
-              </a>
-            {% endif %}
-            {% if pub.video %}
-              <a href="{{ pub.video }}">
-                <i class="fas fa-film" aria-hidden="true"></i> Video
-              </a>
-            {% endif %}
-            {% if pub.doi %}
-              <a href="https://www.doi2bib.org/bib/{{ pub.doi }}">
-                <i class="fas fa-book" aria-hidden="true"></i> Bibtex
-              </a>
-            {% elsif pub.arxiv %}
-              <a href="https://arxiv2bibtex.org/?q={{ pub.arxiv | cgi_escape }}">
-                <i class="fas fa-book" aria-hidden="true"></i> Bibtex
-              </a>
-            {% endif %}
-            </div>
-          {% endif %}
-
-          {% for award in pub.awards %}<strong class="award"><i class="fas fa-{% if award == "Best Paper Award" %}trophy{% else %}award{% endif %}" aria-hidden="true"></i> {{ award }}</strong>{% endfor %}
-        </div>
-      </article>
-    {% endif %}
-  {% endfor %}
-{% endfor %}
-
-<h2>Awards</h2>
-
-{% for award in site.data.awards %}
 <article>
   <div class="date-container">
-    <span class="date">{{ award.year | replace: "-", "–" }}</span>
-    <strong class="fill">{{ award.title }}</strong>
-    <!-- <span class="right">{{ award.sponsor }}</span> -->
+    <span class="date">2025, 2020</span>
+    <h3>sub-THz Measurements</h3>
   </div>
-  <div>
-    {{ award.brief }}
-  </div>
+  <p><strong>Design and Measurement</strong> | NTU GICE</p>
+  <ul>
+    <li>Helped define and validate the RF measurement setup for a 150 GHz transmittive microwave imaging system.</li>
+    <li>Measured S-parameters of a 170 GHz patch antenna using up-converters with D-band RF probes.</li>
+  </ul>
 </article>
-{% endfor %}
 
-<h2>Skills</h2>
-<h3>&#x2022 Electromagnetic Software</h3>
-<div>&#x2800 Ansys HFSS, Keysight ADS, Sonnet, Cadence</div>
-<h3>&#x2022 Microwave Device Measurement</h3>
-<div>&#x2800 NSI2000 Antenna Measurement System, Vector Network Analyzer, and Spectrum Analyzer</div>
-<h3>&#x2022 Embedded Systems</h3>
-<div>&#x2800 Arduino, Raspberry Pi, and Arm Cortex-M processers (STM32)</div>
-<h3>&#x2022 PCB Layout and Fabrication</h3>
-<h3>&#x2022 General Purpose Software</h3>
-<div>&#x2800 C++, Python, Matlab, HTML, and CSS</div>
-<h3>&#x2022 3D Modeler</h3>
-<div>&#x2800 Solidworks, Autodesk Inventor, and AutoCAD</div>
+<article>
+  <div class="date-container">
+    <span class="date">2020</span>
+    <h3>IC Design</h3>
+  </div>
+  <p><strong>Design and Tapeout</strong> | NTU GICE</p>
+  <ul>
+    <li>Taped out a 28-bit Serial-Peripheral Interface IC for bias voltage control using 0.18um CMOS.</li>
+    <li>Taped out a 29GHz 1Watt GaAs PA using P15 D-Mode pHEMT Technology for SATCOM applications.</li>
+    <li>Taped out a 29GHz IQ Up-Converter using 0.18um CMOS Technology.</li>
+  </ul>
+</article>
 
+<article>
+  <div class="date-container">
+    <span class="date">2018</span>
+    <h3>Satcom Project with KACST</h3>
+  </div>
+  <p><strong>TRx System Integration</strong> | NTU GICE</p>
+  <ul>
+    <li>Characterized individual Tx/Rx RFIC building blocks, including up/down-conversion, phase shifting, buffering, PA/LNA stages, and antenna-array interfaces.</li>
+    <li>Coordinated subsystem integration across multiple labs to assemble and validate the end-to-end TRx chain.</li>
+    <li>Performed module- and system-level testing to verify combined transmitter/receiver operation.</li>
+  </ul>
+</article>
 
+<article>
+  <div class="date-container">
+    <span class="date">2018</span>
+    <h3>Falcon Tracking Project</h3>
+  </div>
+  <p><strong>Long Range Transceiver Design and Fabrication</strong> | NTU GICE</p>
+  <ul>
+    <li>Designed transmitter and receiver systems for long-range GPS wireless transmission.</li>
+    <li>Created an Android app written in React Native to display GPS data and compass direction.</li>
+    <li>Designed and fabricated cases for modules and housing using SolidWorks.</li>
+  </ul>
+</article>
 
+<h2>Work Experience</h2>
 
-</section>
+<article>
+  <div class="date-container">
+    <span class="date">09/2016 - 08/2017</span>
+    <h3>Extol</h3>
+  </div>
+  <p><strong>Design Engineer</strong> | Holland, Michigan, USA</p>
+  <ul>
+    <li>Led the mechanical design of integration packages for infrared plastic staking machines, utilizing SolidWorks for component modeling and assembly.</li>
+  </ul>
+</article>
+
+<article>
+  <div class="date-container">
+    <span class="date">05/2014 - 08/2014</span>
+    <h3>Exosite</h3>
+  </div>
+  <p><strong>Testing Intern</strong> | Taichung, Taiwan</p>
+  <ul>
+    <li>Wrote JS scripts using Selenium Web Browser Automation to test and debug customer website portals.</li>
+  </ul>
+</article>
+
+<article>
+  <div class="date-container">
+    <span class="date">05/2013 - 08/2013</span>
+    <h3>National Taiwan University</h3>
+  </div>
+  <p><strong>Research Assistant</strong> | Taipei, Taiwan</p>
+  <ul>
+    <li>Experimented with the heat transfer and dissipation of satellite IC chips at different outputs of power.</li>
+    <li>Analyzed the optimization of heat dissipation required to satisfy specifications.</li>
+  </ul>
+</article>
+
+<h2>Skills &amp; Abilities</h2>
+
+<article>
+  <h3>Software - EM Simulations</h3>
+  <p>Ansys HFSS, ADS, Sonnet, COMSOL, Cadence</p>
+
+  <h3>Software - CAD</h3>
+  <p>SolidWorks, Autodesk Inventor, MSC Adams</p>
+
+  <h3>Software - Coding</h3>
+  <p>Python, React Native, LabVIEW, Matlab, C++, JavaScript</p>
+
+  <h3>Machining</h3>
+  <p>Mill, Lathe, Drill Press, Bandsaw, Waterjet Cutter</p>
+</article>
+
