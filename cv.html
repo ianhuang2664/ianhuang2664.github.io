@@ -4,187 +4,658 @@ permalink: /cv/
 title: CV
 ---
 
-<section class="container">
+<style>
+  :root {
+    --cv-bg: #f7f8fb;
+    --cv-card: #ffffff;
+    --cv-text: #172033;
+    --cv-muted: #5c677d;
+    --cv-soft: #e7eaf0;
+    --cv-accent: #1f5eff;
+    --cv-accent-dark: #1746bd;
+    --cv-chip: #eef3ff;
+    --cv-shadow: 0 18px 45px rgba(23, 32, 51, 0.08);
+  }
 
-<h1>
-  Ian Huang
-  <a href="{{ '/report/20260426%20CV_MTK_SA_v1.pdf' | relative_url }}" class="button">
-    <i class="fas fa-chevron-circle-right"></i>
-    Download CV
-  </a>
-</h1>
+  .cv-page {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 28px 18px 56px;
+    color: var(--cv-text);
+    background: linear-gradient(180deg, var(--cv-bg), #fff 420px);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.62;
+  }
 
-<small class="live-link">
-  Last updated in <time datetime="{{ site.time }}">{{ site.time | date: '%B %Y' }}</time>.
-  Get the latest version at <a href="{{ '/cv' | absolute_url }}">ianhuang2664.github.io/cv</a>.
-</small>
+  .cv-page * {
+    box-sizing: border-box;
+  }
 
-<div class="header-columns">
-  Ph.D. Candidate in Communication Engineering at
-  <b><a href="https://www.ntu.edu.tw/english/">National Taiwan University</a></b><br>
-  <a href="mailto:ianhuang2664@gmail.com">ianhuang2664@gmail.com</a> |
-  <a href="https://ianhuang2664.github.io/">ianhuang2664.github.io</a> |
-  (+886) 905-772-705
-</div>
+  .cv-page a {
+    color: var(--cv-accent);
+    text-decoration: none;
+  }
 
-<h2>Professional Summary</h2>
-<p>
-  Ph.D. candidate in Communication Engineering with hands-on experience in cryogenic RF measurement systems,
-  sub-THz characterization, antenna and RF front-end development, and CMOS/GaAs IC tapeout. Built RF test setups,
-  developed cryogenic calibration methods, and supported hardware integration for RF and quantum-related applications.
-</p>
+  .cv-page a:hover,
+  .cv-page a:focus {
+    color: var(--cv-accent-dark);
+    text-decoration: underline;
+  }
 
-<h2>Education</h2>
+  .cv-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 28px;
+    align-items: start;
+    padding: 36px;
+    border: 1px solid var(--cv-soft);
+    border-radius: 28px;
+    background: var(--cv-card);
+    box-shadow: var(--cv-shadow);
+  }
 
-<article>
-  <div class="date-container">
-    <span class="date">Sep 2019 - Present</span>
-    <h3>National Taiwan University</h3>
-  </div>
-  <p>
-    <strong>Ph.D. Candidate, Communication Engineering</strong><br>
-    Taipei, Taiwan<br>
-    Direct transition from M.S. program; entered Feb 2018. M.S. degree not separately conferred.
+  .cv-eyebrow {
+    margin: 0 0 8px;
+    color: var(--cv-accent-dark);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+  }
+
+  .cv-title {
+    margin: 0;
+    font-size: clamp(2.35rem, 5vw, 4rem);
+    font-weight: 800;
+    letter-spacing: -0.055em;
+    line-height: 0.98;
+  }
+
+  .cv-subtitle {
+    max-width: 760px;
+    margin: 16px 0 0;
+    color: var(--cv-muted);
+    font-size: 1.05rem;
+  }
+
+  .cv-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 22px;
+  }
+
+  .cv-button,
+  .cv-link-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 10px 16px;
+    border-radius: 999px;
+    font-size: 0.94rem;
+    font-weight: 700;
+  }
+
+  .cv-button {
+    color: #fff !important;
+    background: var(--cv-accent);
+    box-shadow: 0 10px 24px rgba(31, 94, 255, 0.22);
+  }
+
+  .cv-button:hover,
+  .cv-button:focus {
+    color: #fff !important;
+    background: var(--cv-accent-dark);
+    text-decoration: none !important;
+  }
+
+  .cv-link-button {
+    color: var(--cv-text) !important;
+    border: 1px solid var(--cv-soft);
+    background: #fff;
+  }
+
+  .cv-link-button:hover,
+  .cv-link-button:focus {
+    color: var(--cv-accent-dark) !important;
+    text-decoration: none !important;
+    border-color: #c9d6ff;
+  }
+
+  .cv-contact-card {
+    min-width: 250px;
+    padding: 18px;
+    border: 1px solid var(--cv-soft);
+    border-radius: 22px;
+    background: #fbfcff;
+  }
+
+  .cv-contact-card h2 {
+    margin: 0 0 12px;
+    border: 0;
+    color: var(--cv-text);
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .cv-contact-list {
+    display: grid;
+    gap: 9px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: var(--cv-muted);
+    font-size: 0.95rem;
+  }
+
+  .cv-update {
+    margin: 16px 4px 0;
+    color: var(--cv-muted);
+    font-size: 0.88rem;
+  }
+
+  .cv-highlight-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+    margin: 18px 0 34px;
+  }
+
+  .cv-highlight {
+    padding: 17px 18px;
+    border: 1px solid var(--cv-soft);
+    border-radius: 20px;
+    background: var(--cv-card);
+  }
+
+  .cv-highlight strong {
+    display: block;
+    font-size: 1.25rem;
+    line-height: 1.1;
+  }
+
+  .cv-highlight span {
+    display: block;
+    margin-top: 5px;
+    color: var(--cv-muted);
+    font-size: 0.86rem;
+    line-height: 1.35;
+  }
+
+  .cv-section {
+    margin-top: 34px;
+  }
+
+  .cv-section-header {
+    display: flex;
+    gap: 14px;
+    align-items: end;
+    justify-content: space-between;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--cv-soft);
+  }
+
+  .cv-section-header h2 {
+    margin: 0;
+    border: 0;
+    color: var(--cv-text);
+    font-size: 1.08rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .cv-section-header p {
+    margin: 0;
+    color: var(--cv-muted);
+    font-size: 0.92rem;
+  }
+
+  .cv-summary-card,
+  .cv-entry,
+  .cv-skill-card,
+  .cv-publication-card {
+    border: 1px solid var(--cv-soft);
+    border-radius: 22px;
+    background: var(--cv-card);
+    box-shadow: 0 10px 30px rgba(23, 32, 51, 0.04);
+  }
+
+  .cv-summary-card {
+    padding: 24px 26px;
+    font-size: 1.03rem;
+  }
+
+  .cv-entry {
+    display: grid;
+    grid-template-columns: 180px minmax(0, 1fr);
+    gap: 24px;
+    padding: 24px 26px;
+    margin-bottom: 14px;
+  }
+
+  .cv-date {
+    color: var(--cv-accent-dark);
+    font-size: 0.88rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+
+  .cv-entry h3 {
+    margin: 0;
+    color: var(--cv-text);
+    font-size: 1.18rem;
+    line-height: 1.25;
+  }
+
+  .cv-meta {
+    margin: 4px 0 10px;
+    color: var(--cv-muted);
+    font-size: 0.96rem;
+  }
+
+  .cv-entry p {
+    margin: 0 0 10px;
+  }
+
+  .cv-entry ul,
+  .cv-publication-card ul,
+  .cv-publication-card ol {
+    margin: 10px 0 0;
+    padding-left: 1.25rem;
+  }
+
+  .cv-entry li,
+  .cv-publication-card li {
+    margin-bottom: 7px;
+  }
+
+  .cv-topic {
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr);
+    gap: 0.45rem;
+    margin-top: 10px;
+  }
+
+  .cv-topic strong {
+    color: var(--cv-text);
+  }
+
+  .cv-tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .cv-tag {
+    display: inline-flex;
+    align-items: center;
+    min-height: 30px;
+    padding: 5px 10px;
+    border-radius: 999px;
+    background: var(--cv-chip);
+    color: var(--cv-accent-dark);
+    font-size: 0.83rem;
+    font-weight: 700;
+  }
+
+  .cv-skill-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .cv-skill-card {
+    padding: 20px 22px;
+  }
+
+  .cv-skill-card h3,
+  .cv-publication-card h3 {
+    margin: 0 0 8px;
+    color: var(--cv-text);
+    font-size: 1rem;
+  }
+
+  .cv-skill-card p {
+    margin: 0;
+    color: var(--cv-muted);
+  }
+
+  .cv-publication-card {
+    padding: 22px 24px;
+    margin-bottom: 14px;
+  }
+
+  .cv-publication-card li {
+    color: var(--cv-muted);
+  }
+
+  .cv-publication-card strong {
+    color: var(--cv-text);
+  }
+
+  .cv-note {
+    color: var(--cv-muted);
+    font-size: 0.92rem;
+  }
+
+  @media (max-width: 820px) {
+    .cv-hero,
+    .cv-entry {
+      grid-template-columns: 1fr;
+    }
+
+    .cv-contact-card {
+      min-width: 0;
+    }
+
+    .cv-highlight-grid,
+    .cv-skill-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 560px) {
+    .cv-page {
+      padding-inline: 12px;
+    }
+
+    .cv-hero,
+    .cv-summary-card,
+    .cv-entry,
+    .cv-skill-card,
+    .cv-publication-card {
+      padding: 20px;
+      border-radius: 18px;
+    }
+
+    .cv-highlight-grid,
+    .cv-skill-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .cv-topic {
+      grid-template-columns: 1fr;
+      gap: 0.1rem;
+    }
+  }
+</style>
+
+<section class="cv-page">
+  <header class="cv-hero">
+    <div>
+      <p class="cv-eyebrow">Curriculum Vitae</p>
+      <h1 class="cv-title">Ian Huang</h1>
+      <p class="cv-subtitle">
+        Ph.D. Candidate in Communication Engineering at
+        <strong><a href="https://www.ntu.edu.tw/english/">National Taiwan University</a></strong>, focusing on cryogenic RF measurement systems, sub-THz characterization, and RF hardware for quantum and cryogenic applications.
+      </p>
+
+      <div class="cv-actions" aria-label="CV links">
+        <a href="{{ '/report/20260510%20CV_MTK_SA_v2.pdf' | relative_url }}" class="cv-button">Download CV</a>
+        <a href="https://ianhuang2664.github.io/" class="cv-link-button">Personal Website</a>
+        <a href="mailto:ianhuang2664@gmail.com" class="cv-link-button">Email</a>
+      </div>
+    </div>
+
+    <aside class="cv-contact-card" aria-label="Contact information">
+      <h2>Contact</h2>
+      <ul class="cv-contact-list">
+        <li><a href="mailto:ianhuang2664@gmail.com">ianhuang2664@gmail.com</a></li>
+        <li><a href="https://ianhuang2664.github.io/">ianhuang2664.github.io</a></li>
+        <li>(+886) 905-772-705</li>
+        <li>Taipei, Taiwan</li>
+      </ul>
+    </aside>
+  </header>
+
+  <p class="cv-update">
+    Last updated in <time datetime="{{ site.time }}">{{ site.time | date: '%B %Y' }}</time>.
+    Latest version: <a href="{{ '/cv/' | absolute_url }}">ianhuang2664.github.io/cv</a>.
   </p>
-  <ul>
-    <li>Advisor: Dr. Shih-Yuan Chen</li>
-    <li>Research Topic: Integration and Characterization of ESR control and the Control and Readout RF Circuitries for Quantum and Cryogenic Applications</li>
-    <li>Award: 2020 IWEM Conference Best Paper Award</li>
-    <li>Teaching Assistant: Antenna Course, Fall 2025</li>
-  </ul>
-</article>
 
-<article>
-  <div class="date-container">
-    <span class="date">2012 - 2016</span>
-    <h3>University of Michigan - Ann Arbor</h3>
+  <div class="cv-highlight-grid" aria-label="Selected highlights">
+    <div class="cv-highlight">
+      <strong>8+ years</strong>
+      <span>RF, measurement, and hardware experience</span>
+    </div>
+    <div class="cv-highlight">
+      <strong>67 GHz</strong>
+      <span>RF and 4-K probe-station test capability</span>
+    </div>
+    <div class="cv-highlight">
+      <strong>10 mK–300 K</strong>
+      <span>Dilution refrigerator measurement range</span>
+    </div>
+    <div class="cv-highlight">
+      <strong>CMOS / GaAs</strong>
+      <span>IC design, tapeout, and characterization</span>
+    </div>
   </div>
-  <p>
-    <strong>Bachelor of Science in Mechanical Engineering</strong>
-  </p>
-  <ul>
-    <li>University of Michigan Dean's List</li>
-    <li>University of Michigan Honors, Winter 2015</li>
-  </ul>
-</article>
 
-<h2>Select RF / System Projects</h2>
+  <section class="cv-section" id="summary">
+    <div class="cv-section-header">
+      <h2>Professional Summary</h2>
+    </div>
+    <div class="cv-summary-card">
+      Ph.D. candidate in Communication Engineering with 8+ years of hands-on experience in cryogenic RF measurement systems, sub-THz characterization, antenna and RF front-end development, and CMOS/GaAs IC tapeout. Built 67 GHz RF test setups, developed cryogenic calibration methods, and supported hardware integration for RF and quantum-related applications.
+    </div>
+  </section>
 
-<article>
-  <div class="date-container">
-    <span class="date">2022 - 2026</span>
-    <h3>Cryogenic Measurements</h3>
-  </div>
-  <p><strong>System Setup</strong> | NTU GICE</p>
-  <ul>
-    <li>Built and integrated the RF signal chain for a dilution refrigerator measurement setup, choosing the attenuation and gain stages to meet thermal and measurement requirements.</li>
-    <li>Designed and fabricated cryogenic PCBs using Rogers RO3003 as a sample holder for high-frequency signals and for stable Dk.</li>
-    <li>Developed milli-Kelvin cryogenic calibration procedures for RF measurements in a dilution refrigerator, including the effects of cable loss, temperature dependence, and limited in-situ standards.</li>
-    <li>Established a 4-K probe-station measurement capability for low-temperature IC/device characterization.</li>
-    <li>Selected instrumentation and components for 4-K IC characterization based on the measurement needs of low-temperature device testing.</li>
-  </ul>
-</article>
+  <section class="cv-section" id="education">
+    <div class="cv-section-header">
+      <h2>Education</h2>
+    </div>
 
-<article>
-  <div class="date-container">
-    <span class="date">2025, 2020</span>
-    <h3>sub-THz Measurements</h3>
-  </div>
-  <p><strong>Design and Measurement</strong> | NTU GICE</p>
-  <ul>
-    <li>Helped define and validate the RF measurement setup for a 150 GHz transmittive microwave imaging system.</li>
-    <li>Measured S-parameters of a 170 GHz patch antenna using up-converters with D-band RF probes.</li>
-  </ul>
-</article>
+    <article class="cv-entry">
+      <div class="cv-date">Sep 2019 – Present</div>
+      <div>
+        <h3>National Taiwan University</h3>
+        <p class="cv-meta"><strong>Ph.D. Candidate, Communication Engineering</strong> · Taipei, Taiwan</p>
+        <p>Direct transition from M.S. program, entered Feb 2018; M.S. degree not separately conferred.</p>
+        <ul>
+          <li>Advisor: Dr. Shih-Yuan Chen</li>
+          <li class="cv-topic"><strong>Research Topic:</strong><span>Integration and Characterization of Control and Readout RF Circuitries<br>for Quantum and Cryogenic Applications</span></li>
+          <li>Award: 2020 iWEM Conference Best Paper Award</li>
+          <li>Teaching Assistant: Antenna Course, <em>Fall 2025</em></li>
+        </ul>
+      </div>
+    </article>
 
-<article>
-  <div class="date-container">
-    <span class="date">2020</span>
-    <h3>IC Design</h3>
-  </div>
-  <p><strong>Design and Tapeout</strong> | NTU GICE</p>
-  <ul>
-    <li>Taped out a 28-bit Serial-Peripheral Interface IC for bias voltage control using 0.18um CMOS.</li>
-    <li>Taped out a 29GHz 1Watt GaAs PA using P15 D-Mode pHEMT Technology for SATCOM applications.</li>
-    <li>Taped out a 29GHz IQ Up-Converter using 0.18um CMOS Technology.</li>
-  </ul>
-</article>
+    <article class="cv-entry">
+      <div class="cv-date">2012 – 2016</div>
+      <div>
+        <h3>University of Michigan – Ann Arbor</h3>
+        <p class="cv-meta"><strong>Bachelor of Science in Mechanical Engineering</strong> · Ann Arbor, Michigan, USA</p>
+        <ul>
+          <li>University of Michigan Dean's List; University of Michigan Honors, <em>Winter 2015</em></li>
+        </ul>
+      </div>
+    </article>
+  </section>
 
-<article>
-  <div class="date-container">
-    <span class="date">2018</span>
-    <h3>Satcom Project with KACST</h3>
-  </div>
-  <p><strong>TRx System Integration</strong> | NTU GICE</p>
-  <ul>
-    <li>Characterized individual Tx/Rx RFIC building blocks, including up/down-conversion, phase shifting, buffering, PA/LNA stages, and antenna-array interfaces.</li>
-    <li>Coordinated subsystem integration across multiple labs to assemble and validate the end-to-end TRx chain.</li>
-    <li>Performed module- and system-level testing to verify combined transmitter/receiver operation.</li>
-  </ul>
-</article>
+  <section class="cv-section" id="projects">
+    <div class="cv-section-header">
+      <h2>Select RF System Projects</h2>
+      <p>Research, measurement, and hardware integration</p>
+    </div>
 
-<article>
-  <div class="date-container">
-    <span class="date">2018</span>
-    <h3>Falcon Tracking Project</h3>
-  </div>
-  <p><strong>Long Range Transceiver Design and Fabrication</strong> | NTU GICE</p>
-  <ul>
-    <li>Designed transmitter and receiver systems for long-range GPS wireless transmission.</li>
-    <li>Created an Android app written in React Native to display GPS data and compass direction.</li>
-    <li>Designed and fabricated cases for modules and housing using SolidWorks.</li>
-  </ul>
-</article>
+    <article class="cv-entry">
+      <div class="cv-date">2022 – 2026</div>
+      <div>
+        <h3>Cryogenic Measurements</h3>
+        <p class="cv-meta"><strong>System Setup</strong> · NTU GICE</p>
+        <ul>
+          <li>Designed an 18 GHz cryogenic RF signal chain and fabricated Rogers RO3003 PCB sample holders for dilution refrigerator measurements from 10 mK–300 K, accounting for high-frequency routing and stable D<sub>k</sub>.</li>
+          <li>Developed mK cryogenic TRL calibration procedures for RF measurements in a dilution refrigerator, including the effects of cable loss, temperature dependence, and limited in-situ standards.</li>
+          <li>Configured a DC–67 GHz, 4-K probe station and selected instrumentation and components for low-temperature IC and device characterization.</li>
+        </ul>
+        <div class="cv-tag-row" aria-label="Related skills">
+          <span class="cv-tag">Cryogenic RF</span>
+          <span class="cv-tag">TRL calibration</span>
+          <span class="cv-tag">67 GHz probing</span>
+        </div>
+      </div>
+    </article>
 
-<h2>Work Experience</h2>
+    <article class="cv-entry">
+      <div class="cv-date">2025, 2020</div>
+      <div>
+        <h3>sub-THz System</h3>
+        <p class="cv-meta"><strong>Design and Measurement</strong> · NTU GICE</p>
+        <ul>
+          <li>Designed the RF system for a 150 GHz transmittive microwave imaging system to measure a 61 × 61 grid.</li>
+          <li>Measured S-parameters of a 170 GHz patch antenna using a D-band state-of-the-art probe antenna system.</li>
+        </ul>
+      </div>
+    </article>
 
-<article>
-  <div class="date-container">
-    <span class="date">09/2016 - 08/2017</span>
-    <h3>Extol</h3>
-  </div>
-  <p><strong>Design Engineer</strong> | Holland, Michigan, USA</p>
-  <ul>
-    <li>Led the mechanical design of integration packages for infrared plastic staking machines, utilizing SolidWorks for component modeling and assembly.</li>
-  </ul>
-</article>
+    <article class="cv-entry">
+      <div class="cv-date">2020</div>
+      <div>
+        <h3>IC Design</h3>
+        <p class="cv-meta"><strong>Design and Tapeout</strong> · NTU GICE</p>
+        <ul>
+          <li>Taped out a 28-bit Serial-Peripheral Interface IC for bias voltage control using 0.18 µm CMOS.</li>
+          <li>Taped out a 29 GHz 1 W GaAs PA using 0.15 µm pHEMT Technology for SATCOM applications.</li>
+          <li>Taped out a 29 GHz IQ Up-Converter using 0.18 µm CMOS Technology.</li>
+        </ul>
+      </div>
+    </article>
 
-<article>
-  <div class="date-container">
-    <span class="date">05/2014 - 08/2014</span>
-    <h3>Exosite</h3>
-  </div>
-  <p><strong>Testing Intern</strong> | Taichung, Taiwan</p>
-  <ul>
-    <li>Wrote JS scripts using Selenium Web Browser Automation to test and debug customer website portals.</li>
-  </ul>
-</article>
+    <article class="cv-entry">
+      <div class="cv-date">2018</div>
+      <div>
+        <h3>Ka-band SATCOM Project with KACST</h3>
+        <p class="cv-meta"><strong>TRx System Integration</strong> · NTU GICE</p>
+        <ul>
+          <li>Characterized individual Tx/Rx RFIC building blocks, including up/down-conversion, phase shifting, buffering, PA/LNA stages, and antenna-array interfaces.</li>
+          <li>Coordinated subsystem integration across multiple labs to assemble and validate the end-to-end TRx chain.</li>
+          <li>Performed module- and system-level testing to verify combined transmitter/receiver operation.</li>
+        </ul>
+      </div>
+    </article>
 
-<article>
-  <div class="date-container">
-    <span class="date">05/2013 - 08/2013</span>
-    <h3>National Taiwan University</h3>
-  </div>
-  <p><strong>Research Assistant</strong> | Taipei, Taiwan</p>
-  <ul>
-    <li>Experimented with the heat transfer and dissipation of satellite IC chips at different outputs of power.</li>
-    <li>Analyzed the optimization of heat dissipation required to satisfy specifications.</li>
-  </ul>
-</article>
+    <article class="cv-entry">
+      <div class="cv-date">2018</div>
+      <div>
+        <h3>Falcon Tracking Project</h3>
+        <p class="cv-meta"><strong>Long Range Transceiver Design and Fabrication</strong> · NTU GICE</p>
+        <ul>
+          <li>Designed transmitter and receiver systems for long-range GPS wireless transmission.</li>
+          <li>Created an Android app written in React Native to display GPS data and compass direction.</li>
+          <li>Designed and fabricated cases for modules and housing using SolidWorks.</li>
+        </ul>
+      </div>
+    </article>
+  </section>
 
-<h2>Skills &amp; Abilities</h2>
+  <section class="cv-section" id="experience">
+    <div class="cv-section-header">
+      <h2>Work Experience</h2>
+    </div>
 
-<article>
-  <h3>Software - EM Simulations</h3>
-  <p>Ansys HFSS, ADS, Sonnet, COMSOL, Cadence</p>
+    <article class="cv-entry">
+      <div class="cv-date">Sep 2016 – Aug 2017</div>
+      <div>
+        <h3>Extol</h3>
+        <p class="cv-meta"><strong>Design Engineer</strong> · Holland, Michigan, USA</p>
+        <ul>
+          <li>Led the mechanical design of integration packages for infrared plastic staking machines, utilizing SolidWorks for component modeling and assembly.</li>
+        </ul>
+      </div>
+    </article>
 
-  <h3>Software - CAD</h3>
-  <p>SolidWorks, Autodesk Inventor, MSC Adams</p>
+    <article class="cv-entry">
+      <div class="cv-date">May 2014 – Aug 2014</div>
+      <div>
+        <h3>Exosite</h3>
+        <p class="cv-meta"><strong>Testing Intern</strong> · Taichung, Taiwan</p>
+        <ul>
+          <li>Developed JavaScript/Selenium browser-automation scripts to test, debug, and validate customer web portals.</li>
+        </ul>
+      </div>
+    </article>
 
-  <h3>Software - Coding</h3>
-  <p>Python, React Native, LabVIEW, Matlab, C++, JavaScript</p>
+    <article class="cv-entry">
+      <div class="cv-date">May 2013 – Aug 2013</div>
+      <div>
+        <h3>National Taiwan University</h3>
+        <p class="cv-meta"><strong>Research Assistant</strong> · Taipei, Taiwan</p>
+        <ul>
+          <li>Experimented with the heat transfer and dissipation of satellite IC chips at different power outputs.</li>
+          <li>Analyzed the optimization of heat dissipation required to satisfy specifications.</li>
+        </ul>
+      </div>
+    </article>
+  </section>
 
-  <h3>Machining</h3>
-  <p>Mill, Lathe, Drill Press, Bandsaw, Waterjet Cutter</p>
-</article>
+  <section class="cv-section" id="skills">
+    <div class="cv-section-header">
+      <h2>Skills &amp; Abilities</h2>
+    </div>
 
+    <div class="cv-skill-grid">
+      <article class="cv-skill-card">
+        <h3>Software · EM Simulations</h3>
+        <p>Ansys HFSS, ADS, Sonnet, COMSOL, Cadence</p>
+      </article>
+      <article class="cv-skill-card">
+        <h3>Software · CAD / Layout</h3>
+        <p>SolidWorks, Autodesk Inventor, MSC Adams, Altium</p>
+      </article>
+      <article class="cv-skill-card">
+        <h3>Software · Coding</h3>
+        <p>Python, React Native, MATLAB, LabVIEW, C++, JavaScript</p>
+      </article>
+      <article class="cv-skill-card">
+        <h3>Machining</h3>
+        <p>Mill, Lathe, Drill Press, Bandsaw, Waterjet Cutter</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="cv-section" id="publications">
+    <div class="cv-section-header">
+      <h2>Publications</h2>
+      <p>Journals, conferences, and patent application</p>
+    </div>
+
+    <article class="cv-publication-card">
+      <h3>Journals</h3>
+      <ol>
+        <li>H.-P. Liao, <strong>I. Huang</strong>, and S.-Y. Chen, “An ultra-lightweight wideband folded E-shaped patch antenna made from aluminum meshes for high-power S-band applications,” <em>IEEE Transactions on Antennas and Propagation</em>, 2025.</li>
+        <li>Y.-C. Chang, <strong>I. Huang</strong>, C.-Y. Chen, M.-J. Lin, S.-Y. Chen, and J.-Y. Li, “Electron-spin-resonance meanderlines for effective spin control in Si quantum dots for large-scale qubit applications,” <em>Applied Physics Letters</em>, vol. 119, no. 24, Art. no. 243503, 2021.</li>
+        <li>J. Y.-C. Liu, <strong>I. Huang</strong>, Y.-H. Kuo, W.-T. Li, W.-H. Lin, W.-J. Lin, J.-H. Tsai, H. Alsuraisry, H.-C. Lu, and T.-W. Huang, “Smart RF integrated circuits: A millimeter-wave gigabit transceiver with digitally-enabled built-in self-healing and auto-switching functions,” <em>IEEE Microwave Magazine</em>, vol. 20, no. 1, pp. 28–37, 2018.</li>
+      </ol>
+    </article>
+
+    <article class="cv-publication-card">
+      <h3>Conferences</h3>
+      <ol>
+        <li>S.-W. Wu, <strong>I. Huang</strong>, R. Jeanty, Z.-H. Fu, K.-Y. Lin, and S.-Y. Chen, “A miniaturized microstrip-based phase inverter as a phase delay component at 24 GHz,” in <em>Proc. 2024 Int. Symp. on Antennas and Propagation (ISAP)</em>, pp. 1–2, 2024.</li>
+        <li>S.-Y. Chen, <strong>I. Huang</strong>, M.-J. Lin, J.-Y. Li, and S.-Y. Chen, “A DC to 67-GHz 40-nm CMOS SP4T switch for cryogenic S-parameter measurement and calibration,” in <em>Proc. 2024 19th European Microwave Integrated Circuits Conf. (EuMIC)</em>, pp. 206–209, 2024.</li>
+        <li>Y.-T. Chen, <strong>I. Huang</strong>, M.-J. Lin, S.-Y. Chuang, H.-L. Ho, K.-S. Hsu, P.-Y. Lin, S.-Y. Chen, L.-H. Lu, and S.-Y. Chen, “A thru-reflect-series-resistance (TRS) calibration for cryogenic device characterization in 40-nm CMOS technology,” in <em>Proc. 2023 IEEE/MTT-S Int. Microwave Symp. (IMS)</em>, pp. 1203–1206, 2023.</li>
+        <li><strong>I. Huang</strong>, L.-Y. Kung, and S.-Y. Chen, “Multi-layered proximity probe-fed E-shaped patch antenna array for terahertz imaging system,” in <em>Proc. 2023 17th European Conf. on Antennas and Propagation (EuCAP)</em>, pp. 1–5, 2023.</li>
+        <li><strong>I. Huang</strong>, C.-L. Liao, and S.-Y. Chen, “Dual-linearly-polarized printed dual-dipole antenna array for polarimetric radar application,” in <em>Proc. 2020 Int. Workshop on Electromagnetics: Applications and Student Innovation Competition (iWEM)</em>, pp. 1–2, 2020.</li>
+        <li>H. Alsuraisry, W.-J. Lin, <strong>I. Huang</strong>, and T.-W. Huang, “Design of Ka-band transceiver for satellite communication,” in <em>Proc. 2019 IEEE Jordan Int. Joint Conf. Electr. Eng. Inf. Technol. (JEEIT)</em>, pp. 307–310, 2019.</li>
+        <li>K.-C. Chiang, T.-C. Tsai, <strong>I. Huang</strong>, J.-H. Tsai, and T.-W. Huang, “A 27-GHz transformer based power amplifier with 513.8-mW/mm² output power density and 40.7% peak PAE in 1-V 28-nm CMOS,” in <em>Proc. 2019 IEEE MTT-S Int. Microwave Symp. (IMS)</em>, pp. 1283–1286, 2019.</li>
+        <li><strong>I. Huang</strong>, Y.-C. Li, W.-C. Lin, J.-H. Tsai, A. Alshehri, M. Almalki, A. Sayed, H.-C. Lu, and T.-W. Huang, “Reviews of high image rejection up and down converters for next-generation satellite applications,” in <em>Proc. 2018 IEEE Int. Symp. Radio-Frequency Integration Technol. (RFIT)</em>, pp. 1–3, 2018.</li>
+        <li>T.-C. Tsai, <strong>I. Huang</strong>, J.-H. Tsai, A. Alshehri, M. Almalki, A. Sayed, and T.-W. Huang, “A Ka-band sub-harmonically pumped mixer using diode-connected MOSFET for 5G mm-wave transceivers,” in <em>Proc. 2018 Asia-Pacific Microwave Conf. (APMC)</em>, pp. 488–490, 2018.</li>
+        <li><strong>I. Huang</strong>, S.-T. Yen, W.-P. Chao, J.-H. Tsai, A. Alshehri, M. Almalki, A. Sayed, and T.-W. Huang, “A 29.6 dBm 29-GHz power amplifier for satellite and 5G communications using 0.15-µm GaAs p-HEMT technology,” in <em>Proc. 2018 Asia-Pacific Microwave Conf. (APMC)</em>, pp. 986–988, 2018.</li>
+      </ol>
+    </article>
+
+    <article class="cv-publication-card">
+      <h3>Patent</h3>
+      <ul>
+        <li>J.-Y. Li, S.-Y. Chen, Y.-C. Chang, <strong>I. Huang</strong>, and C.-Y. Chen, “Electronic device with conductive resonator,” U.S. Patent App. 18/443,839, Jun. 6, 2024.</li>
+      </ul>
+    </article>
+  </section>
+</section>

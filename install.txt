@@ -1,0 +1,10 @@
+try ruby 3.1 instead of current 4.0.3
+del Gemfile.lock
+
+bundle add csv
+bundle add webrick
+bundle add bigdecimal
+
+bundle install
+bundle exec jekyll serve --livereload
+
